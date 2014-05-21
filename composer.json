@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "php-objects/php-objects": "dev-master"
+        "php-objects/php-objects": "dev-master",
+        "php-objects/query-builder": "dev-master"
     },
     "require-dev": {
         "phpunit/PHPUnit": "3.7.*"

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f0998127a7513f69bf6dbe46b6d4c167",
+    "hash": "5e632753cc2b3698b5054e00bf202e1e",
     "packages": [
         {
             "name": "php-objects/php-objects",
@@ -41,6 +41,46 @@
             "description": "Primitive types behaving like grown up objects",
             "homepage": "https://github.com/mjacobus/php-objects",
             "time": "2014-03-13 13:35:10"
+        },
+        {
+            "name": "php-objects/query-builder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mjacobus/php-query-builder.git",
+                "reference": "88a10b114e8c1e879ea758c102b9f16525a31a77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mjacobus/php-query-builder/zipball/88a10b114e8c1e879ea758c102b9f16525a31a77",
+                "reference": "88a10b114e8c1e879ea758c102b9f16525a31a77",
+                "shasum": ""
+            },
+            "require": {
+                "php-objects/php-objects": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PO\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcelo Jacobus",
+                    "email": "marcelo.jacobus@gmail.com"
+                }
+            ],
+            "description": "Query Builder - Making SQL composing easier",
+            "time": "2014-05-20 16:45:05"
         }
     ],
     "packages-dev": [
@@ -466,7 +506,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "php-objects/php-objects": 20
+        "php-objects/php-objects": 20,
+        "php-objects/query-builder": 20
     },
     "platform": [
 
