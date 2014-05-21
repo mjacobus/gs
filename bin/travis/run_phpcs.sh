@@ -8,7 +8,7 @@ php --version | grep 5.5 > /dev/null
 if (( $? == 0 )); then
   echo ""
   echo -en "Checking lib code standard..."
-  phpcs --standard=PSR2 lib
+  phpcs --standard=Zend lib
 
   if (( $? == 0 )); then
     echo -e '\E[32m'"\033[1m\tPASSED!\033[0m" # Green
@@ -18,7 +18,7 @@ if (( $? == 0 )); then
   fi
 
   echo -en "Checking tests code standard..."
-  phpcs --standard=PSR2 tests
+  phpcs --standard=Zend tests
 
   if (( $? == 0 )); then
     echo -e '\E[32m'"\033[1m\tPASSED!\033[0m" # Green
