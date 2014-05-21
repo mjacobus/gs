@@ -16,102 +16,14 @@ class Gs_QueryBuilderTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function itInitializesWithTheCorrectSelectStatement()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_SelectStatement',
-            $this->_o->getSelect()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itInitializesWithTheCorrectFromStatement()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_FromStatement',
-            $this->_o->getFrom()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itInitializesWithTheCorrectWhereStatement()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_WhereStatement',
-            $this->_o->getWhere()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itInitializesWithTheCorrectOrderStatement()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_OrderStatement',
-            $this->_o->getOrder()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itInitializesWithTheCorrectJoinsStatement()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_JoinStatement',
-            $this->_o->getJoins()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itInitializesWithTheCorrectGroupStatement()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_GroupStatement',
-            $this->_o->getGroup()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itCanOverrideTheHelperCorrectHelper()
-    {
-        $this->assertInstanceOf(
-            'Gs_QueryBuilder_Helper',
-            $this->_o->getHelper()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function itInitializesWithTheCorrectHelper()
-    {
-        $helper = new Gs_QueryBuilder_Helper();
-        $options = array('helper' => $helper);
-        $object = new Gs_QueryBuilder($options);
-        $this->assertSame($helper, $object->getHelper());
-    }
-
-    /**
-     * @test
-     */
     public function
         itCanSetAddFieldsToTheSelectStatementAsStringAndReturnBuilder()
     {
-        $object = $this->_o->select('field')->select(array('one', 'two'));
-        $this->assertSame($this->_o, $object);
+        $object = Gs_QueryBuilder::factorySelect()->select('field')->select(array('one', 'two'));
+
         $this->assertEquals(
             array('field', 'one', 'two'),
-            $this->_o->getSelect()->getParams()
+            $object->getSelect()->getParams()
         );
     }
 
@@ -285,7 +197,7 @@ class Gs_QueryBuilderTest extends PHPUnit_Framework_TestCase
     public function canFactorySelect()
     {
         $query = Gs_QueryBuilder::factorySelect(array('a', 'b'));
-        $this->assertInstanceOf('Gs_QueryBuilder_Select', $query);
+        $this->assertInstanceOf('PO\QueryBuilder\Select', $query);
         $this->assertEquals('SELECT a, b', $query->toSql());
     }
 
@@ -295,7 +207,7 @@ class Gs_QueryBuilderTest extends PHPUnit_Framework_TestCase
     public function canFactoryUpdate()
     {
         $query = Gs_QueryBuilder::update('table')->addSet('foo', 'bar');
-        $this->assertInstanceOf('Gs_QueryBuilder_Update', $query);
+        $this->assertInstanceOf('PO\QueryBuilder\Update', $query);
         $this->assertEquals("UPDATE table SET foo = 'bar'", $query->toSql());
     }
 
@@ -307,7 +219,7 @@ class Gs_QueryBuilderTest extends PHPUnit_Framework_TestCase
         $query = Gs_QueryBuilder::insert('table')
             ->values(array('foo' => 'bar'));
 
-        $this->assertInstanceOf('Gs_QueryBuilder_Insert', $query);
+        $this->assertInstanceOf('PO\QueryBuilder\Insert', $query);
         $this->assertEquals(
             "INSERT INTO table (foo) VALUES ('bar')",
             $query->toSql()

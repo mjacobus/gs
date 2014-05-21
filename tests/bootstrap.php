@@ -9,6 +9,6 @@ set_include_path(
 
 define('FIXTURES_PATH', dirname(__FILE__) . '/fixtures/');
 
-require_once 'Gs/QueryBuilder.php';
+$loader = require_once LIB_PATH . '/../vendor/autoload.php';
 
-require_once LIB_PATH . '/../vendor/autoload.php';
+require_once 'Gs/QueryBuilder.php';
