@@ -13,12 +13,12 @@ branches:
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev --no-interaction
-  # - ./bin/travis/install_phpcs.sh
+  - ./bin/travis/install_phpcs.sh
 
 script:
   - mkdir -p build/logs
   - ./vendor/bin/phpunit --configuration=tests/phpunit.xml
-  # - ./bin/travis/run_phpcs.sh
+  - ./bin/travis/run_phpcs.sh
 
 after_script:
   - php vendor/bin/coveralls
