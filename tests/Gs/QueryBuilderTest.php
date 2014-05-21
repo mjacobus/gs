@@ -19,7 +19,8 @@ class Gs_QueryBuilderTest extends PHPUnit_Framework_TestCase
     public function
         itCanSetAddFieldsToTheSelectStatementAsStringAndReturnBuilder()
     {
-        $object = Gs_QueryBuilder::factorySelect()->select('field')->select(array('one', 'two'));
+        $object = Gs_QueryBuilder::factorySelect()
+            ->select('field')->select(array('one', 'two'));
 
         $this->assertEquals(
             array('field', 'one', 'two'),
