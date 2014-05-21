@@ -14,12 +14,12 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_SetStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
-        $this->o = new Gs_QueryBuilder_SetStatement(new Gs_QueryBuilder);
-        $this->o->getBuilder()->getHelper()->setDoubleQuoted(true);
+        $this->_o = new Gs_QueryBuilder_SetStatement(new Gs_QueryBuilder);
+        $this->_o->getBuilder()->getHelper()->setDoubleQuoted(true);
     }
 
     /**
@@ -27,7 +27,7 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itSetQueryBuilderOnTheConstructor()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_Statement', $this->o);
+        $this->assertInstanceOf('Gs_QueryBuilder_Statement', $this->_o);
     }
 
     /**
@@ -36,12 +36,12 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
     public function itCanConvertToSql()
     {
         $sql = 'SET name = "foo"';
-        $this->o->set(array('name' => 'foo'));
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->set(array('name' => 'foo'));
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql = 'SET name = "foo", age = 3';
-        $this->o->addSet('age', '3');
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->addSet('age', '3');
+        $this->assertEquals($sql, $this->_o->toSql());
     }
 
     /**
@@ -49,7 +49,7 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itReturnsEmptyStringWhenNoParamIsGiven()
     {
-        $this->assertEquals('', $this->o->toSql());
+        $this->assertEquals('', $this->_o->toSql());
     }
 
     /**
@@ -57,10 +57,12 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itProvidesInterfaceToAddValuesToBeSet()
     {
-        $this->o->addSet('a', 'b')->addSets(array(
-            'c' => 1,
-            'd' => 2
-        ));
+        $this->_o->addSet('a', 'b')->addSets(
+            array(
+                'c' => 1,
+                'd' => 2
+            )
+        );
 
         $params = array(
             'a' => 'b',
@@ -68,7 +70,7 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
             'd' => 2
         );
 
-        $this->assertEquals($params, $this->o->getParams());
+        $this->assertEquals($params, $this->_o->getParams());
     }
 
     /**
@@ -78,9 +80,8 @@ class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase
     {
         $params = array('r' => 1);
 
-        $this->o->set(array('c' => 1))->set($params);
+        $this->_o->set(array('c' => 1))->set($params);
 
-        $this->assertEquals($params, $this->o->getParams());
+        $this->assertEquals($params, $this->_o->getParams());
     }
-
 }

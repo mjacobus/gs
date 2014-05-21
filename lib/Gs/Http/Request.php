@@ -33,7 +33,8 @@ class Gs_Http_Request
      * @param array $post the $_POST variable
      * @param array $get teh $_GET variable
      */
-    public function __construct(array $server = array(), $post = array(), array $get = array())
+    public function __construct(array $server = array(), $post = array(),
+        array $get = array())
     {
         $this->_server = new Gs_Params($server);
         $this->_post   = new Gs_Params($post);

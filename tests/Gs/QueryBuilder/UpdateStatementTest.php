@@ -9,7 +9,7 @@ class Gs_QueryBuilder_UpdateStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_UpdateStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
@@ -33,5 +33,4 @@ class Gs_QueryBuilder_UpdateStatementTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('UPDATE table', $this->o->toString());
     }
-
 }

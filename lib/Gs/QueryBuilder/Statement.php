@@ -80,7 +80,7 @@ class Gs_QueryBuilder_Statement
      */
     public function addParams(array $params)
     {
-        foreach($params as $param) {
+        foreach ($params as $param) {
             $this->addParam($param);
         }
 

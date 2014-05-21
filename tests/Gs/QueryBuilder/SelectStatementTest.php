@@ -9,7 +9,7 @@ class Gs_QueryBuilder_SelectStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_SelectStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
@@ -41,5 +41,4 @@ class Gs_QueryBuilder_SelectStatementTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('SELECT *', $this->o->toString());
     }
-
 }

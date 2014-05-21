@@ -126,11 +126,14 @@ class Gs_QueryBuilder_Helper
      * @param array $values the key value pair of placeholders
      * @return string the string to be replaced
      */
-    public function replacePlaceholders($string, $values, $quoteIfNecessary = true)
+    public function replacePlaceholders($string, $values,
+        $quoteIfNecessary = true)
     {
-        foreach($values as $placeholder => $value) {
-            $replacement = $quoteIfNecessary ? $this->quoteIfNecessary($value) : $value;
-            $string = str_replace(":{$placeholder}", $replacement, $string);
+        foreach ($values as $placeholder => $value) {
+            if ($quoteIfNecessary) {
+                $value = $this->quoteIfNecessary($value);
+            }
+            $string = str_replace(":{$placeholder}", $value, $string);
         }
         return $string;
     }
@@ -150,7 +153,7 @@ class Gs_QueryBuilder_Helper
      */
     public function toDbValue($value)
     {
-        if ($this->isString($value)){
+        if ($this->isString($value)) {
             return $this->quoteIfNecessary($value);
         }
 

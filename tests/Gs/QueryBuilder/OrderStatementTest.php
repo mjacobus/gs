@@ -14,11 +14,11 @@ class Gs_QueryBuilder_OrderStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_OrderStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
-        $this->o = new Gs_QueryBuilder_OrderStatement(new Gs_QueryBuilder);
+        $this->_o = new Gs_QueryBuilder_OrderStatement(new Gs_QueryBuilder);
     }
 
     /**
@@ -26,7 +26,7 @@ class Gs_QueryBuilder_OrderStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itSetQueryBuilderOnTheConstructor()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_Statement', $this->o);
+        $this->assertInstanceOf('Gs_QueryBuilder_Statement', $this->_o);
     }
 
     /**
@@ -34,11 +34,11 @@ class Gs_QueryBuilder_OrderStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itConvertsCorrectlyToString()
     {
-        $this->o->addParam('foo');
-        $this->assertEquals('ORDER BY foo', $this->o->toSql());
+        $this->_o->addParam('foo');
+        $this->assertEquals('ORDER BY foo', $this->_o->toSql());
 
-        $this->o->addParam('bar DESC');
-        $this->assertEquals('ORDER BY foo, bar DESC', $this->o->toSql());
+        $this->_o->addParam('bar DESC');
+        $this->assertEquals('ORDER BY foo, bar DESC', $this->_o->toSql());
     }
 
     /**
@@ -46,7 +46,6 @@ class Gs_QueryBuilder_OrderStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itReturnsEmptyStringWhenNoParamIsGiven()
     {
-        $this->assertEquals('', $this->o->toSql());
+        $this->assertEquals('', $this->_o->toSql());
     }
-
 }

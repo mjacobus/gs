@@ -41,7 +41,8 @@ class Gs_Http_Action
      * @param Gs_Http_Request $request
      * @param Gs_Http_Response $response
      */
-    public function __construct(Gs_Http_Request $request, Gs_Http_Response $response)
+    public function __construct(Gs_Http_Request $request,
+        Gs_Http_Response $response)
     {
         $this->_request  = $request;
         $this->_response = $response;
@@ -64,6 +65,5 @@ class Gs_Http_Action
     {
         return $this->_response;
     }
-
 }
 

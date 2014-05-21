@@ -14,7 +14,7 @@ class Gs_QueryBuilder_LimitStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_LimitStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
@@ -48,5 +48,4 @@ class Gs_QueryBuilder_LimitStatementTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('', $this->o->toSql());
     }
-
 }

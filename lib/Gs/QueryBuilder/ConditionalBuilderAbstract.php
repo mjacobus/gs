@@ -29,7 +29,8 @@ require_once 'Gs/QueryBuilder/LimitStatement.php';
  * Helper for building SELECT SQL
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
-class Gs_QueryBuilder_ConditionalBuilderAbstract extends Gs_QueryBuilder_Abstract
+class Gs_QueryBuilder_ConditionalBuilderAbstract
+    extends Gs_QueryBuilder_Abstract
 {
 
     /**

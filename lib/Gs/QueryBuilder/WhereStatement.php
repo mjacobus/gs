@@ -24,7 +24,8 @@ class Gs_QueryBuilder_WhereStatement extends Gs_QueryBuilder_Statement
      * @param string $operator
      * @return Gs_QueryBuilder_WhereStatement
      */
-    public function addCondition($fieldOrCondition, $value = null, $operator = '=')
+    public function addCondition($fieldOrCondition, $value = null,
+        $operator = '=')
     {
         $parts = array($fieldOrCondition);
 
@@ -56,8 +57,11 @@ class Gs_QueryBuilder_WhereStatement extends Gs_QueryBuilder_Statement
         foreach ($conditions as $key => $condition) {
             if (is_array($condition)) {
                 call_user_func_array(array($this, 'addCondition'), $condition);
-            } else if (!$this->getBuilder()->getHelper()->isNumber($key)){
-                call_user_func_array(array($this, 'addCondition'), array($key, $condition));
+            } elseif (!$this->getBuilder()->getHelper()->isNumber($key)) {
+                call_user_func_array(
+                    array($this, 'addCondition'),
+                    array($key, $condition)
+                );
             } else {
                 $this->addCondition($condition);
             }

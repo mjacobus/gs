@@ -15,7 +15,7 @@ class Gs_ClassLoader
 
         $paths = explode(PATH_SEPARATOR, get_include_path());
 
-        foreach($paths as $path) {
+        foreach ($paths as $path) {
             if (file_exists($path . '/' . $file)) {
                 require_once $file;
                 return true;
@@ -39,11 +39,11 @@ class Gs_ClassLoader
      * Register this class as autoloader
      *
      * @param boolean $prepend should prepend autoloader?
-     * @param boolean $throwExceptions should throw exceptions if class is not found?
+     * @param boolean $throwExceptions should throw exceptions 
+     *                  if class is not found?
      */
     public function register($prepend = true, $throwExceptions = false)
     {
         spl_autoload_register(array($this, 'load'), $throwExceptions, $prepend);
     }
-
 }

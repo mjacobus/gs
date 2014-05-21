@@ -7,12 +7,12 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
     /**
      * @var Gs_QueryBuilder_Update
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
-        $this->o = new Gs_QueryBuilder_Update();
-        $this->o->getHelper()->setDoubleQuoted(true);
+        $this->_o = new Gs_QueryBuilder_Update();
+        $this->_o->getHelper()->setDoubleQuoted(true);
     }
 
     /**
@@ -20,7 +20,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itInitializesWithTheCorrectUpdateStatement()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_UpdateStatement', $this->o->getUpdate());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_UpdateStatement',
+            $this->_o->getUpdate()
+        );
     }
 
     /**
@@ -28,7 +31,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itInitializesWithTheCorrectSetStatement()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_SetStatement', $this->o->getSet());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_SetStatement',
+            $this->_o->getSet()
+        );
     }
 
     /**
@@ -36,7 +42,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itInitializesWithTheCorrectWhereStatement()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_WhereStatement', $this->o->getWhere());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_WhereStatement',
+            $this->_o->getWhere()
+        );
     }
 
     /**
@@ -44,7 +53,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itInitializesWithTheCorrectOrderStatement()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_OrderStatement', $this->o->getOrder());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_OrderStatement',
+            $this->_o->getOrder()
+        );
     }
 
     /**
@@ -52,7 +64,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itInitializesWithTheCorrectLimitStatement()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_LimitStatement', $this->o->getLimit());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_LimitStatement',
+            $this->_o->getLimit()
+        );
     }
 
     /**
@@ -60,7 +75,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itInitializesWithTheCorrectJoinsStatement()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_JoinStatement', $this->o->getJoins());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_JoinStatement',
+            $this->_o->getJoins()
+        );
     }
 
     /**
@@ -68,7 +86,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itCanOverrideTheHelperCorrectHelper()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_Helper', $this->o->getHelper());
+        $this->assertInstanceOf(
+            'Gs_QueryBuilder_Helper',
+            $this->_o->getHelper()
+        );
     }
 
     /**
@@ -88,35 +109,38 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
     public function itCanConvertQueryToString()
     {
         $sql = 'UPDATE table';
-        $this->o->table('table');
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->table('table');
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql .= ' INNER JOIN table2';
-        $this->o->innerJoin('table2');
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->innerJoin('table2');
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql .= ' SET foo = "bar", age = 12';
-        $this->o->set(array(
-            'foo' => 'bar',
-            'age' => 12
-        ));
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->set(
+            array(
+                'foo' => 'bar',
+                'age' => 12
+            )
+        );
+
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql .= ' WHERE a = "b" AND b = 1';
-        $this->o->where('a', 'b')->where(array('b' => 1));
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->where('a', 'b')->where(array('b' => 1));
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql .= ' ORDER BY foo, bar DESC';
-        $this->o->orderBy(array('foo', 'bar DESC'));
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->orderBy(array('foo', 'bar DESC'));
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql .= ' LIMIT 10';
-        $this->o->limit(10);
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->limit(10);
+        $this->assertEquals($sql, $this->_o->toSql());
 
         $sql .= ', 2';
-        $this->o->limit(10, 2);
-        $this->assertEquals($sql, $this->o->toSql());
+        $this->_o->limit(10, 2);
+        $this->assertEquals($sql, $this->_o->toSql());
     }
 
     /**
@@ -124,10 +148,12 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itGetSqlReplacingThePlaceHolders()
     {
-        $this->o->table('table')->set(array(
-            'name' => ':name',
-            'age'  => ':age'
-        ));
+        $this->_o->table('table')->set(
+            array(
+                'name' => ':name',
+                'age'  => ':age'
+            )
+        );
 
         $sql = 'UPDATE table SET name = "foo", age = 12';
         $params = array(
@@ -135,7 +161,7 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
             'age' => 12
         );
 
-        $this->assertEquals($sql, $this->o->toSql($params));
+        $this->assertEquals($sql, $this->_o->toSql($params));
     }
 
 
@@ -144,9 +170,9 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itAddsInnerJoin()
     {
-        $this->o->innerJoin('t1')->innerJoin('t2', 't1.id = t2.t1_id');
+        $this->_o->innerJoin('t1')->innerJoin('t2', 't1.id = t2.t1_id');
         $sql = 'INNER JOIN t1 INNER JOIN t2 ON t1.id = t2.t1_id';
-        $this->assertEquals($sql, $this->o->getJoins()->toSql());
+        $this->assertEquals($sql, $this->_o->getJoins()->toSql());
     }
 
     /**
@@ -154,9 +180,9 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itAddsLeftJoin()
     {
-        $this->o->leftJoin('t1')->leftJoin('t2', 't1.id = t2.t1_id');
+        $this->_o->leftJoin('t1')->leftJoin('t2', 't1.id = t2.t1_id');
         $sql = 'LEFT JOIN t1 LEFT JOIN t2 ON t1.id = t2.t1_id';
-        $this->assertEquals($sql, $this->o->getJoins()->toSql());
+        $this->assertEquals($sql, $this->_o->getJoins()->toSql());
     }
 
     /**
@@ -164,7 +190,7 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itCallsToSqlWhenConvertingToString()
     {
-        $this->assertEquals($this->o->toSql(), (string) $this->o);
+        $this->assertEquals($this->_o->toSql(), (string) $this->_o);
     }
 
     /**
@@ -172,13 +198,15 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itProvidesInterfaceForAddingConditions()
     {
-        $this->o->where('a = 1')
+        $this->_o->where('a = 1')
             ->where('a', 'b')
             ->where('a', 'x', '!=')
-            ->where(array(
-                'foo' => 'bar',
-                'foobar' => 'foo'
-            ));
+            ->where(
+                array(
+                    'foo' => 'bar',
+                    'foobar' => 'foo'
+                )
+            );
 
         $expectedParams = array(
             'a = 1',
@@ -188,7 +216,10 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
             'foobar = "foo"',
         );
 
-        $this->assertEquals($expectedParams, $this->o->getWhere()->getParams());
+        $this->assertEquals(
+            $expectedParams,
+            $this->_o->getWhere()->getParams()
+        );
     }
 
     /**
@@ -196,11 +227,13 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
      */
     public function itProvidesInterfaceForAddingOrder()
     {
-        $this->o->orderBy('a')->orderBy(array('b', 'c'));
+        $this->_o->orderBy('a')->orderBy(array('b', 'c'));
 
         $expectedParams = array( 'a', 'b', 'c');
 
-        $this->assertEquals($expectedParams, $this->o->getOrder()->getParams());
+        $this->assertEquals(
+            $expectedParams,
+            $this->_o->getOrder()->getParams()
+        );
     }
-
 }

@@ -37,7 +37,8 @@ class Gs_Params extends Hash
      * Get the param by key. When key is null, return all the values
      *
      * @param string $key the key to access the param
-     * @param mixed $default the default value to return case the key does not exit
+     * @param mixed $default the default value to return case 
+     *                        the key does not exit
      * @return mixed
      */
     public function get($key = null, $default = null)

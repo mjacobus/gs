@@ -67,5 +67,4 @@ class Gs_QueryBuilder_FromStatement extends Gs_QueryBuilder_Statement
         $this->addParam($join);
         return $this;
     }
-
 }

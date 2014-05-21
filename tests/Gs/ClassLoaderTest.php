@@ -8,11 +8,11 @@ class Gs_ClassLoaderTest extends PHPUnit_Framework_TestCase
     /**
      * @var Gs_ClassLoader
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
-        $this->o = new Gs_ClassLoader;
+        $this->_o = new Gs_ClassLoader;
     }
 
     /**
@@ -22,6 +22,6 @@ class Gs_ClassLoaderTest extends PHPUnit_Framework_TestCase
     {
         $class = 'Some_VeryNice_Class';
         $filePath = 'Some/VeryNice/Class.php';
-        $this->assertEquals($filePath, $this->o->fileName($class));
+        $this->assertEquals($filePath, $this->_o->fileName($class));
     }
 }

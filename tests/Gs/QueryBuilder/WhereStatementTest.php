@@ -14,12 +14,12 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_WhereStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
-        $this->o = new Gs_QueryBuilder_WhereStatement(new Gs_QueryBuilder);
-        $this->o->getBuilder()->getHelper()->setDoubleQuoted(true);
+        $this->_o = new Gs_QueryBuilder_WhereStatement(new Gs_QueryBuilder);
+        $this->_o->getBuilder()->getHelper()->setDoubleQuoted(true);
     }
 
     /**
@@ -27,7 +27,7 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itSetQueryBuilderOnTheConstructor()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder_Statement', $this->o);
+        $this->assertInstanceOf('Gs_QueryBuilder_Statement', $this->_o);
     }
 
     /**
@@ -35,11 +35,11 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itConvertsCorrectlyToString()
     {
-        $this->o->addParam('1 = 1');
-        $this->assertEquals('WHERE 1 = 1', $this->o->toSql());
+        $this->_o->addParam('1 = 1');
+        $this->assertEquals('WHERE 1 = 1', $this->_o->toSql());
 
-        $this->o->addParam('2 = 2');
-        $this->assertEquals('WHERE 1 = 1 AND 2 = 2', $this->o->toSql());
+        $this->_o->addParam('2 = 2');
+        $this->assertEquals('WHERE 1 = 1 AND 2 = 2', $this->_o->toSql());
     }
 
     /**
@@ -47,7 +47,7 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itReturnsEmptyStringWhenNoParamIsGiven()
     {
-        $this->assertEquals('', $this->o->toSql());
+        $this->assertEquals('', $this->_o->toSql());
     }
 
     /**
@@ -55,7 +55,7 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itProvidesInterfaceToAddCondition()
     {
-        $this->o->addCondition('a', 'b')
+        $this->_o->addCondition('a', 'b')
             ->addCondition('x', 1)
             ->addCondition('y', 1, '!=')
             ->addCondition('c ILIKE "%a%"');
@@ -67,7 +67,7 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
             'c ILIKE "%a%"'
         );
 
-        $this->assertEquals($expectedParams, $this->o->getParams());
+        $this->assertEquals($expectedParams, $this->_o->getParams());
     }
 
     /**
@@ -75,15 +75,15 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itProvidesInterfaceToAddConditions()
     {
-        $this->o->addConditions(array(
-            'a = "b"',
-            array('x', 1),
-            array('x', '2', '!=')
-        ));
+        $this->_o->addConditions(
+            array(
+                'a = "b"',
+                array('x', 1),
+                array('x', '2', '!=')
+            )
+        );
 
-        $this->o->addConditions(array(
-            'a' => '5'
-        ));
+        $this->_o->addConditions(array( 'a' => '5'));
 
         $expectedParams = array(
             'a = "b"',
@@ -92,8 +92,6 @@ class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase
             'a = 5',
         );
 
-        $this->assertEquals($expectedParams, $this->o->getParams());
+        $this->assertEquals($expectedParams, $this->_o->getParams());
     }
-
-
 }

@@ -13,11 +13,11 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_Statement $query
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
-        $this->o = new Gs_QueryBuilder_Statement(new Gs_QueryBuilder);
+        $this->_o = new Gs_QueryBuilder_Statement(new Gs_QueryBuilder);
     }
 
     /**
@@ -25,7 +25,7 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
      */
     public function itSetQueryBuilderOnTheConstructor()
     {
-        $this->assertInstanceOf('Gs_QueryBuilder', $this->o->getBuilder());
+        $this->assertInstanceOf('Gs_QueryBuilder', $this->_o->getBuilder());
     }
 
     /**
@@ -33,8 +33,8 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
      */
     public function itCanAddParamsOneByOne()
     {
-        $this->o->addParam('one')->addParam('two');
-        $this->assertEquals(array('one', 'two'), $this->o->getParams());
+        $this->_o->addParam('one')->addParam('two');
+        $this->assertEquals(array('one', 'two'), $this->_o->getParams());
     }
 
     /**
@@ -42,8 +42,11 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
      */
     public function itCanAddCollectionOfParams()
     {
-        $this->o->addParam('one')->addParams(array('two', 'three'));
-        $this->assertEquals(array('one', 'two', 'three'), $this->o->getParams());
+        $this->_o->addParam('one')->addParams(array('two', 'three'));
+        $this->assertEquals(
+            array('one', 'two', 'three'),
+            $this->_o->getParams()
+        );
     }
 
     /**
@@ -51,8 +54,8 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
      */
     public function itCanSetParams()
     {
-        $this->o->addParam('one')->setParams(array('two', 'three'));
-        $this->assertEquals(array('two', 'three'), $this->o->getParams());
+        $this->_o->addParam('one')->setParams(array('two', 'three'));
+        $this->assertEquals(array('two', 'three'), $this->_o->getParams());
     }
 
     /**
@@ -60,8 +63,8 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
      */
     public function itCanResetParams()
     {
-        $this->o->addParam('one')->addParam('two')->reset();
-        $this->assertEquals(array(), $this->o->getParams());
+        $this->_o->addParam('one')->addParam('two')->reset();
+        $this->assertEquals(array(), $this->_o->getParams());
     }
 
     /**
@@ -69,6 +72,6 @@ class Gs_QueryBuilder_StatementTest extends PHPUnit_Framework_TestCase
      */
     public function itsStringVersionIsEmpty()
     {
-        $this->assertEquals('', $this->o);
+        $this->assertEquals('', $this->_o);
     }
 }

@@ -109,5 +109,4 @@ class Gs_QueryBuilder_Abstract
     {
         return $this->toSql();
     }
-
 }

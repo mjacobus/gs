@@ -14,7 +14,7 @@ class Gs_QueryBuilder_FromStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_FromStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
@@ -34,7 +34,11 @@ class Gs_QueryBuilder_FromStatementTest extends PHPUnit_Framework_TestCase
      */
     public function itConvertsCorrectlyToString()
     {
-        $this->o->addParams(array('table t1', 'INNER JOIN table2 t2 ON t1.id = t2.t1_id'));
+        $this->o->addParams(
+            array(
+                'table t1', 'INNER JOIN table2 t2 ON t1.id = t2.t1_id'
+            )
+        );
 
         $this->assertEquals(
             'FROM table t1 INNER JOIN table2 t2 ON t1.id = t2.t1_id',

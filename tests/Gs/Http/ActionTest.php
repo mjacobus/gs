@@ -7,25 +7,25 @@ class Gs_Http_ActionTest extends PHPUnit_Framework_TestCase
     /**
      * @var Gs_Http_Action
      */
-    protected $o;
-
-    /**
-     * @var Gs_Http_Request
-     */
-    protected $request;
+    protected $_o;
 
     /**
      * @var Gs_Http_Response
      */
-    protected $response;
+    protected $_response;
 
-    protected $sever = array('server' => 'varable');
+    /**
+     * @var Gs_Http_Request
+     */
+    protected $_request;
+
+    protected $_sever = array('server' => 'varable');
 
     public function setUp()
     {
-        $this->request = new Gs_Http_Request;
-        $this->response = new Gs_Http_Response;
-        $this->o = new Gs_Http_Action($this->request, $this->response);
+        $this->_request  = new Gs_Http_Request;
+        $this->_response = new Gs_Http_Response;
+        $this->_o = new Gs_Http_Action($this->_request, $this->_response);
     }
 
     /**
@@ -33,7 +33,7 @@ class Gs_Http_ActionTest extends PHPUnit_Framework_TestCase
      */
     public function itCanExecuteAction()
     {
-        $this->o->execute();
+        $this->_o->execute();
     }
 
     /**
@@ -41,7 +41,7 @@ class Gs_Http_ActionTest extends PHPUnit_Framework_TestCase
      */
     public function itCanSetRequest()
     {
-        $this->assertSame($this->request, $this->o->getRequest());
+        $this->assertSame($this->_request, $this->_o->getRequest());
     }
 
     /**
@@ -49,8 +49,7 @@ class Gs_Http_ActionTest extends PHPUnit_Framework_TestCase
      */
     public function itCanSetResponse()
     {
-        $this->assertSame($this->response, $this->o->getResponse());
+        $this->assertSame($this->_response, $this->_o->getResponse());
     }
-
 }
 

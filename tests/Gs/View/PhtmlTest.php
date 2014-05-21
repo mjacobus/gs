@@ -7,20 +7,22 @@ class Gs_View_PhtmlTest extends PHPUnit_Framework_Testcase
     /**
      * @var Gs_View_Phtml
      */
-    protected $o;
-    protected $variables = array('name' => 'Foo', 'greeting' => 'Hello');
+    protected $_o;
+    protected $_variables = array('name' => 'Foo', 'greeting' => 'Hello');
 
 
     public function setUp()
     {
-        $variables      = $this->variables;
+        $variables      = $this->_variables;
         $template       = FIXTURES_PATH . 'template.phtml';
         $this->template = $template;
 
-        $this->o = new Gs_View_Phtml(array(
-            'template' => $template,
-            'variables' => $variables
-        ));
+        $this->_o = new Gs_View_Phtml(
+            array(
+                'template' => $template,
+                'variables' => $variables
+            )
+        );
     }
 
     /**
@@ -28,7 +30,7 @@ class Gs_View_PhtmlTest extends PHPUnit_Framework_Testcase
      */
     public function itCanSetVariables()
     {
-        $this->assertEquals($this->variables, $this->o->getVariables());
+        $this->assertEquals($this->_variables, $this->_o->getVariables());
     }
 
     /**
@@ -55,7 +57,7 @@ class Gs_View_PhtmlTest extends PHPUnit_Framework_Testcase
      */
     public function itCanRenderTemplate()
     {
-        $this->assertContains('Hello Foo', $this->o->render());
+        $this->assertContains('Hello Foo', $this->_o->render());
     }
 
     /**
@@ -63,6 +65,6 @@ class Gs_View_PhtmlTest extends PHPUnit_Framework_Testcase
      */
     public function itBindTheViewObjectToTheTemplate()
     {
-        $this->assertContains($this->o->getTemplate(), $this->o->render());
+        $this->assertContains($this->_o->getTemplate(), $this->_o->render());
     }
 }

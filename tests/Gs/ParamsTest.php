@@ -11,15 +11,17 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
     /**
      * @var Gs_Params
      */
-    protected $o;
+    protected $_o;
 
 
     public function setUp()
     {
-        $this->o = new Gs_Params(array(
-            'a' => 'Argentina',
-            'b' => 'Brazil',
-        ));
+        $this->_o = new Gs_Params(
+            array(
+                'a' => 'Argentina',
+                'b' => 'Brazil',
+            )
+        );
     }
 
     /**
@@ -32,8 +34,8 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
             'b' => 'Brazil',
         );
 
-        $this->assertEquals($expectedParams, $this->o->getAll());
-        $this->assertEquals($expectedParams, $this->o->get());
+        $this->assertEquals($expectedParams, $this->_o->getAll());
+        $this->assertEquals($expectedParams, $this->_o->get());
     }
 
     /**
@@ -41,10 +43,10 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
      */
     public function itCanGetParam()
     {
-        $this->assertEquals('Argentina', $this->o->get('a'));
-        $this->assertEquals('Brazil', $this->o->get('b'));
-        $this->assertNull($this->o->get('c'));
-        $this->assertEquals('default', $this->o->get('c', 'default'));
+        $this->assertEquals('Argentina', $this->_o->get('a'));
+        $this->assertEquals('Brazil', $this->_o->get('b'));
+        $this->assertNull($this->_o->get('c'));
+        $this->assertEquals('default', $this->_o->get('c', 'default'));
     }
 
     /**
@@ -52,10 +54,10 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
      */
     public function itCanCheckIfValueIsSet()
     {
-        $this->assertTrue($this->o->keyExists('a'));
-        $this->assertFalse($this->o->keyExists('c'));
-        $this->assertTrue($this->o->offsetExists('a'));
-        $this->assertFalse($this->o->offsetExists('c'));
+        $this->assertTrue($this->_o->keyExists('a'));
+        $this->assertFalse($this->_o->keyExists('c'));
+        $this->assertTrue($this->_o->offsetExists('a'));
+        $this->assertFalse($this->_o->offsetExists('c'));
     }
 
     /**
@@ -65,7 +67,7 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
     {
         $values = array();
 
-        foreach($this->o as $value) {
+        foreach ($this->_o as $value) {
             $values[] = $value;
         }
 
@@ -73,11 +75,11 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
 
         $values = array();
 
-        foreach($this->o as $key => $value) {
+        foreach ($this->_o as $key => $value) {
             $values[$key] = $value;
         }
 
-        $this->assertEquals($this->o->getAll(), $values);
+        $this->assertEquals($this->_o->getAll(), $values);
     }
 
     /**
@@ -85,8 +87,8 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
      */
     public function itCanBeAccessedAsArray()
     {
-        $this->assertEquals('Argentina', $this->o['a']);
-        $this->assertNull($this->o['c']);
+        $this->assertEquals('Argentina', $this->_o['a']);
+        $this->assertNull($this->_o['c']);
     }
 
     /**
@@ -94,8 +96,8 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
      */
     public function itCanSetValueAsArray()
     {
-        $this->o['c'] = 'Cuba';
-        $this->assertEquals('Cuba', $this->o['c']);
+        $this->_o['c'] = 'Cuba';
+        $this->assertEquals('Cuba', $this->_o['c']);
     }
 
     /**
@@ -103,9 +105,8 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
      */
     public function canUnsetValue()
     {
-        $this->o->offsetUnset('a');
-        $this->assertEquals(array('b' => 'Brazil'), $this->o->getAll());
+        $this->_o->offsetUnset('a');
+        $this->assertEquals(array('b' => 'Brazil'), $this->_o->getAll());
     }
-
 }
 

@@ -14,7 +14,7 @@ class Gs_QueryBuilder_JoinStatementTest extends PHPUnit_Framework_TestCase
     /**
      * @param Gs_QueryBuilder_JoinStatement
      */
-    protected $o;
+    protected $_o;
 
     public function setUp()
     {
