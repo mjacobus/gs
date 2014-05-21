@@ -1,6 +1,6 @@
 # PHP Micro Framework
 
-Fore very specific purpose
+For a very specific purpose
 
 [![Build Status](https://travis-ci.org/mjacobus/gs.png?branch=master)](https://travis-ci.org/mjacobus/php-objects)
 [![Coverage Status](https://coveralls.io/repos/mjacobus/gs/badge.png)](https://coveralls.io/r/mjacobus/php-objects)
