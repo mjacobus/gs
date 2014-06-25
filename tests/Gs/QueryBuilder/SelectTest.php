@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/QueryBuilder/Select.php';
-
 class Gs_QueryBuilder_SelectTest extends PHPUnit_Framework_TestCase
 {
     /**

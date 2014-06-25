@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/Http/Request.php';
-
 class Gs_Http_RequestTest extends PHPUnit_Framework_TestCase
 {
 

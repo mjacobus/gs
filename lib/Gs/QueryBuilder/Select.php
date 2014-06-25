@@ -1,26 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_SelectStatement
- */
-require_once 'Gs/QueryBuilder/SelectStatement.php';
-
-/**
- * @see Gs_QueryBuilder_FromStatement
- */
-require_once 'Gs/QueryBuilder/FromStatement.php';
-
-/**
- * @see Gs_QueryBuilder_GroupStatement
- */
-require_once 'Gs/QueryBuilder/GroupStatement.php';
-
-/**
- * @see Gs_QueryBuilder_ConditionalBuilderAbstract
- */
-require_once 'Gs/QueryBuilder/ConditionalBuilderAbstract.php';
-
-/**
  * Helper for building SELECT SQL
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

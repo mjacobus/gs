@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_WhereStatement
- */
-require_once 'Gs/QueryBuilder/WhereStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_WhereStatementTest extends PHPUnit_Framework_TestCase

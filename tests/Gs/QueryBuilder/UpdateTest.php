@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/QueryBuilder/Update.php';
-
 class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
 {
     /**

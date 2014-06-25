@@ -1,31 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_Abstract
- */
-require_once 'Gs/QueryBuilder/Abstract.php';
-
-/**
- * @see Gs_QueryBuilder_JoinStatement
- */
-require_once 'Gs/QueryBuilder/JoinStatement.php';
-
-/**
- * @see Gs_QueryBuilder_WhereStatement
- */
-require_once 'Gs/QueryBuilder/WhereStatement.php';
-
-/**
- * @see Gs_QueryBuilder_OrderStatement
- */
-require_once 'Gs/QueryBuilder/OrderStatement.php';
-
-/**
- * @see Gs_QueryBuilder_LimitStatement
- */
-require_once 'Gs/QueryBuilder/LimitStatement.php';
-
-/**
  * Helper for building SELECT SQL
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

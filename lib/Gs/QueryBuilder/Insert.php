@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_Abstract
- */
-require_once 'Gs/QueryBuilder/Abstract.php';
-
-/**
  * Helper for building INSERT SQL
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

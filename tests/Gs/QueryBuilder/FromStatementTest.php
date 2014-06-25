@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_FromStatement
- */
-require_once 'Gs/QueryBuilder/FromStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_FromStatementTest extends PHPUnit_Framework_TestCase

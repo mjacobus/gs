@@ -1,21 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_Select
- */
-require_once 'Gs/QueryBuilder/Select.php';
-
-/**
- * @see Gs_QueryBuilder_Update
- */
-require_once 'Gs/QueryBuilder/Update.php';
-
-/**
- * @see Gs_QueryBuilder_Insert
- */
-require_once 'Gs/QueryBuilder/Insert.php';
-
-/**
  * Helper for building classes
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

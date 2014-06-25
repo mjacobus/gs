@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_View_Abstract
- */
-require_once 'Gs/View.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_View_Phtml extends Gs_View

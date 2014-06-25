@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/ClassLoader.php';
-
 class Gs_ClassLoaderTest extends PHPUnit_Framework_TestCase
 {
 

@@ -1,21 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_ConditionalBuilderAbstract
- */
-require_once 'Gs/QueryBuilder/ConditionalBuilderAbstract.php';
-
-/**
- * @see Gs_QueryBuilder_UpdateStatement
- */
-require_once 'Gs/QueryBuilder/UpdateStatement.php';
-
-/**
- * @see Gs_QueryBuilder_SetStatement
- */
-require_once 'Gs/QueryBuilder/SetStatement.php';
-
-/**
  * Helper for building UPDATE SQL
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

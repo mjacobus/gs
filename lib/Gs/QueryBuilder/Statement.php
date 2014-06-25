@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder
- */
-require_once 'Gs/QueryBuilder.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_Statement

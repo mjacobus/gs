@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_JoinStatement
- */
-require_once 'Gs/QueryBuilder/JoinStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_JoinStatementTest extends PHPUnit_Framework_TestCase

@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_SetStatement
- */
-require_once 'Gs/QueryBuilder/SetStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_SetStatementTest extends PHPUnit_Framework_TestCase

@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_LimitStatement
- */
-require_once 'Gs/QueryBuilder/LimitStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_LimitStatementTest extends PHPUnit_Framework_TestCase

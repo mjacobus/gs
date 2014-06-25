@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_Helper
- */
-require_once 'Gs/QueryBuilder/Helper.php';
-
-/**
  * Helper for building classes
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

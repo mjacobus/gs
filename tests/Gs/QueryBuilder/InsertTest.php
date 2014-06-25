@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/QueryBuilder/Insert.php';
-
 class Gs_QueryBuilder_InsertTest extends PHPUnit_Framework_TestCase
 {
 

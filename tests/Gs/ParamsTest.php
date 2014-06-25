@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Gs/Params.php';
-
-
 /**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */

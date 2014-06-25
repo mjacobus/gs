@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/View/Phtml.php';
-
 class Gs_View_PhtmlTest extends PHPUnit_Framework_Testcase
 {
     /**

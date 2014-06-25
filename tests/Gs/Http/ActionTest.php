@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Gs/Http/Action.php';
-
 class Gs_Http_ActionTest extends PHPUnit_Framework_TestCase
 {
     /**

@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_GroupStatement
- */
-require_once 'Gs/QueryBuilder/GroupStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_GroupStatementTest extends PHPUnit_Framework_TestCase

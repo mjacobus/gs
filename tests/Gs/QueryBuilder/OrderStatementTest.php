@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @see Gs_QueryBuilder_OrderStatement
- */
-require_once 'Gs/QueryBuilder/OrderStatement.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_QueryBuilder_OrderStatementTest extends PHPUnit_Framework_TestCase

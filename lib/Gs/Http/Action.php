@@ -1,16 +1,6 @@
 <?php
 
 /**
- * @var Gs_Http_Request
- */
-require_once 'Gs/Http/Request.php';
-
-/**
- * @var Gs_Http_Response
- */
-require_once 'Gs/Http/Response.php';
-
-/**
  * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
  */
 class Gs_Http_Action
