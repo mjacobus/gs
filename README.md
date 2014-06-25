@@ -5,6 +5,10 @@ For a very specific purpose
 [![Build Status](https://travis-ci.org/mjacobus/gs.png?branch=master)](https://travis-ci.org/mjacobus/php-objects)
 [![Coverage Status](https://coveralls.io/repos/mjacobus/gs/badge.png)](https://coveralls.io/r/mjacobus/php-objects)
 [![Code Climate](https://codeclimate.com/github/mjacobus/gs.png)](https://codeclimate.com/github/mjacobus/gs)
+[![Latest Stable Version](https://poser.pugx.org/gs/di/v/stable.svg)](https://packagist.org/packages/gs/di)
+[![Total Downloads](https://poser.pugx.org/gs/di/downloads.svg)](https://packagist.org/packages/gs/di)
+[![Latest Unstable Version](https://poser.pugx.org/gs/di/v/unstable.svg)](https://packagist.org/packages/gs/di)
+[![License](https://poser.pugx.org/gs/di/license.svg)](https://packagist.org/packages/gs/di)
 
 Includes:
 
