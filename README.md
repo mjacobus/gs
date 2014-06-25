@@ -47,7 +47,7 @@ phpcs --standard=Zend tests
 ./bin/travis/run_phpcs.sh
 ```
 
-## Lincense
+## License
 [MIT](MIT-LICENSE)
 
 ## Authors
