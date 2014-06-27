@@ -19,7 +19,7 @@ script:
   - vendor/bin/php-cs-fixer fix -v --dry-run tests
   - bin/travis/run_phpcs.sh
   # mess detector
-  - vendor/bin/phpcpd lib tests
+  - vendor/bin/phpcpd lib
   # dead code detector
   - vendor/bin/phpdcd lib tests
 
