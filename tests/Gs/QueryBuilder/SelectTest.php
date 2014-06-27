@@ -115,7 +115,7 @@ class Gs_QueryBuilder_SelectTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function itCanSetAddFieldsToTheSelectStatementAsStringAndReturnBuilder()
+    public function itCanSetAddFieldsToTheStatementAsStringAndReturnBuilder()
     {
         $object = $this->_o->select('field')->select(array('one', 'two'));
         $this->assertSame($this->_o, $object);

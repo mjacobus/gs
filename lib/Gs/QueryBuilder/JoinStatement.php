@@ -46,7 +46,8 @@ class Gs_QueryBuilder_JoinStatement extends Gs_QueryBuilder_Statement
     /**
      * Joins a table
      *
-     * @param  string                        $type the type of join (INNER, LEFT)
+     * @param  string                        $type the type of join
+     *                                             (INNER, LEFT)
      * @param  string                        $join the table to join
      * @param  string                        $on   the condtition to join
      * @return Gs_QueryBuilder_JoinStatement

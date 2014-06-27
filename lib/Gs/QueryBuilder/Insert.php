@@ -41,7 +41,8 @@ class Gs_QueryBuilder_Insert extends Gs_QueryBuilder_Abstract
     /**
      * Set the values to insert
      *
-     * @param  array                  $params key is the field and value is the value \o/
+     * @param  array                  $params key is the field and value is
+     *                                        the value \o/
      * @return Gs_QueryBuilder_Insert
      */
     public function values(array $values = array())
