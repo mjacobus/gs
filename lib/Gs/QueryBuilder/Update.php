@@ -27,49 +27,53 @@ class Gs_QueryBuilder_Update extends Gs_QueryBuilder_ConditionalBuilderAbstract
     /**
      * Sets (overrides) the values to be set
      *
-     * @param array $values the values to set
+     * @param  array                  $values the values to set
      * @return Gs_QueryBuilder_Update
      */
     public function set(array $values = array())
     {
         $this->getSet()->set($values);
+
         return $this;
     }
 
     /**
      * Adds values to be set
      *
-     * @param array $values the values to set
+     * @param  array                  $values the values to set
      * @return Gs_QueryBuilder_Update
      */
     public function addSets(array $values = array())
     {
         $this->getSet()->addSets($values);
+
         return $this;
     }
 
     /**
      * Set a column and a value
      *
-     * @param string $column
-     * @param string $value
+     * @param  string                 $column
+     * @param  string                 $value
      * @return Gs_QueryBuilder_Update
      */
     public function addSet($column, $value)
     {
         $this->getSet()->addSet($column, $value);
+
         return $this;
     }
 
     /**
      * Set the table to update
      *
-     * @param string $table
+     * @param  string                 $table
      * @return Gs_QueryBuilder_Update
      */
     public function table($table)
     {
         $this->getUpdate()->table($table);
+
         return $this;
     }
 

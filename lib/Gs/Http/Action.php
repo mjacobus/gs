@@ -6,7 +6,6 @@
 class Gs_Http_Action
 {
 
-
     /**
      * @var Gs_Http_Request
      */
@@ -25,10 +24,9 @@ class Gs_Http_Action
 
     }
 
-
     /**
      * Here is where the actionshould be executed
-     * @param Gs_Http_Request $request
+     * @param Gs_Http_Request  $request
      * @param Gs_Http_Response $response
      */
     public function __construct(Gs_Http_Request $request,
@@ -56,4 +54,3 @@ class Gs_Http_Action
         return $this->_response;
     }
 }
-

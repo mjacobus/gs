@@ -6,7 +6,7 @@ class Gs_ClassLoader
     /**
      * Attempts to load class
      *
-     * @param string $class
+     * @param  string  $class
      * @return boolean
      */
     public function load($class)
@@ -18,6 +18,7 @@ class Gs_ClassLoader
         foreach ($paths as $path) {
             if (file_exists($path . '/' . $file)) {
                 require_once $file;
+
                 return true;
             }
         }
@@ -27,7 +28,7 @@ class Gs_ClassLoader
 
     /**
      * Get the name of the class to load
-     * @param string $class the class name to load
+     * @param  string $class the class name to load
      * @return string the relative file path
      */
     public function fileName($class)
@@ -38,9 +39,9 @@ class Gs_ClassLoader
     /**
      * Register this class as autoloader
      *
-     * @param boolean $prepend should prepend autoloader?
-     * @param boolean $throwExceptions should throw exceptions 
-     *                  if class is not found?
+     * @param boolean $prepend         should prepend autoloader?
+     * @param boolean $throwExceptions should throw exceptions
+     *                                 if class is not found?
      */
     public function register($prepend = true, $throwExceptions = false)
     {

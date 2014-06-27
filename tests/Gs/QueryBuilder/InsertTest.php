@@ -22,7 +22,6 @@ class Gs_QueryBuilder_InsertTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Gs_QueryBuilder_Abstract', $this->_o);
     }
 
-
     /**
      * @test
      */

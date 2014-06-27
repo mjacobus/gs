@@ -73,6 +73,7 @@ class Gs_View_Phtml extends Gs_View
         extract($this->getVariables());
         ob_start();
         require $this->getTemplate();
+
         return ob_get_clean();
     }
 

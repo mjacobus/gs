@@ -11,22 +11,23 @@ class Gs_Params extends Hash
     /**
      * Set the params
      *
-     * @param array $params the params to be set
+     * @param  array     $params the params to be set
      * @return Gs_Params
      */
     public function setValues(array $params = array())
     {
         $this->_params = $params;
+
         return $this;
     }
 
     /**
      * Set the value
      *
-     * @param string $key
-     * @param mixed $value
+     * @param  string    $key
+     * @param  mixed     $value
      * @return Gs_Params
-     * */
+     *                         */
     public function setValue($key, $value)
     {
         return $this->_params[$key] = $value;
@@ -36,9 +37,9 @@ class Gs_Params extends Hash
     /**
      * Get the param by key. When key is null, return all the values
      *
-     * @param string $key the key to access the param
-     * @param mixed $default the default value to return case 
-     *                        the key does not exit
+     * @param  string $key     the key to access the param
+     * @param  mixed  $default the default value to return case
+     *                         the key does not exit
      * @return mixed
      */
     public function get($key = null, $default = null)

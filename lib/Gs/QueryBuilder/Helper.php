@@ -15,12 +15,13 @@ class Gs_QueryBuilder_Helper
     /**
      * Set the double quotes flag
      *
-     * @param bool $flag
+     * @param  bool   $flag
      * @return string
      */
     public function setDoubleQuoted($flag)
     {
         $this->_doubleQuoted = $flag;
+
         return $this;
     }
 
@@ -38,7 +39,7 @@ class Gs_QueryBuilder_Helper
      * Quote value with either double or single quotes, depending on the
      * configuration
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function quote($value)
@@ -53,31 +54,33 @@ class Gs_QueryBuilder_Helper
     /**
      * Quote value with double quotes
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function doubleQuote($value)
     {
         $escaped =  str_replace('"', '\"', $value);
+
         return '"' . $escaped . '"';
     }
 
     /**
      * Quote value with single quotes
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function singleQuote($value)
     {
         $escaped =  str_replace("'", "\'", $value);
+
         return "'" . $escaped . "'";
     }
 
     /**
      * Quote value if it is not a number or placeholder
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function quoteIfNecessary($value)
@@ -91,7 +94,7 @@ class Gs_QueryBuilder_Helper
 
     /**
      * Informs if given value is number
-     * @param string $value
+     * @param  string $value
      * @return bool
      */
     public function isNumber($value)
@@ -101,7 +104,7 @@ class Gs_QueryBuilder_Helper
 
     /**
      * Informs if given value is a string
-     * @param string $value
+     * @param  string $value
      * @return bool
      */
     public function isString($value)
@@ -111,7 +114,7 @@ class Gs_QueryBuilder_Helper
 
     /**
      * Informs if given value is a placeholder
-     * @param string $value
+     * @param  string $value
      * @return bool
      */
     public function isPlaceholder($value)
@@ -122,8 +125,8 @@ class Gs_QueryBuilder_Helper
     /**
      * Replace the given string with the given placeholders
      *
-     * @param string $string
-     * @param array $values the key value pair of placeholders
+     * @param  string $string
+     * @param  array  $values the key value pair of placeholders
      * @return string the string to be replaced
      */
     public function replacePlaceholders($string, $values,
@@ -135,6 +138,7 @@ class Gs_QueryBuilder_Helper
             }
             $string = str_replace(":{$placeholder}", $value, $string);
         }
+
         return $string;
     }
 
@@ -148,7 +152,7 @@ class Gs_QueryBuilder_Helper
      *     To force return as it is
      *     array('value' => $someVar) => $someVar
      *
-     * @param mixed $value
+     * @param  mixed  $value
      * @return string
      */
     public function toDbValue($value)

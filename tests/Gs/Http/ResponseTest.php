@@ -12,7 +12,6 @@ class Gs_Http_ResponseTest extends PHPUnit_Framework_TestCase
         $this->_o = new Gs_Http_Response;
     }
 
-
     /**
      * @test
      */

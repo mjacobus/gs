@@ -66,12 +66,13 @@ class Gs_QueryBuilder_Select extends Gs_QueryBuilder_ConditionalBuilderAbstract
     /**
      * Add params to the query statement
      *
-     * @param string|array $param
+     * @param  string|array    $param
      * @return Gs_QueryBuilder
      */
     public function select($param)
     {
         $this->getSelect()->addParams((array) $param);
+
         return $this;
     }
 
@@ -102,6 +103,7 @@ class Gs_QueryBuilder_Select extends Gs_QueryBuilder_ConditionalBuilderAbstract
     public function from($params)
     {
         $this->getFrom()->setParams((array) $params);
+
         return $this;
     }
 
@@ -111,12 +113,13 @@ class Gs_QueryBuilder_Select extends Gs_QueryBuilder_ConditionalBuilderAbstract
      *
      * $this->groupBy('foo')->groupBy('bar DESC')->groupBy(array('foobar'));
      *
-     * @param string $params the field and direction to order by
+     * @param  string          $params the field and direction to order by
      * @return Gs_QueryBuilder
      */
     public function groupBy($params)
     {
         $this->getGroup()->addParams((array) $params);
+
         return $this;
     }
 

@@ -19,23 +19,25 @@ class Gs_Http_Response
 
     /**
      * set the body content
-     * @param string $body
+     * @param  string       $body
      * @return Gs_Http_Body
      */
     public function setBody($body)
     {
         $this->_body = $body;
+
         return $this;
     }
 
     /**
      * Append content to the body
-     * @param string $content
+     * @param  string       $content
      * @return Gs_Http_Body
      */
     public function append($content)
     {
         $this->_body .= $content;
+
         return $this;
     }
 

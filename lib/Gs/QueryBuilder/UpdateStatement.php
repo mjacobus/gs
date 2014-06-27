@@ -31,6 +31,7 @@ class Gs_QueryBuilder_UpdateStatement extends Gs_QueryBuilder_Statement
     public function table($tableName)
     {
         $this->setParams(array($tableName));
+
         return $this;
     }
 

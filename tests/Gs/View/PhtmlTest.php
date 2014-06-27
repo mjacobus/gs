@@ -8,7 +8,6 @@ class Gs_View_PhtmlTest extends PHPUnit_Framework_Testcase
     protected $_o;
     protected $_variables = array('name' => 'Foo', 'greeting' => 'Hello');
 
-
     public function setUp()
     {
         $variables      = $this->_variables;

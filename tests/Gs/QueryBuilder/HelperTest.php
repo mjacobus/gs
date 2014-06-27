@@ -50,7 +50,6 @@ class Gs_QueryBuilder_HelperTest extends PHPUnit_Framework_TestCase
     public function itQuotesValue()
     {
 
-
         $this->assertEquals('"a"', $this->_o->quote('a'));
         $this->assertEquals('"abc"', $this->_o->quote('abc'));
         $this->assertEquals('"1"', $this->_o->quote('1'));

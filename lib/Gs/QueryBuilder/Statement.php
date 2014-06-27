@@ -36,26 +36,26 @@ class Gs_QueryBuilder_Statement
     /**
      * Add one param to the existing collection of params
      *
-     * @param mixed $param
+     * @param  mixed                     $param
      * @return Gs_QueryBuilder_Statement
      */
     public function addParam($param)
     {
         $this->_params[] = $param;
+
         return $this;
     }
 
     /**
      * Set the params. Remove old ones.
      *
-     * @param array $params
+     * @param  array                     $params
      * @return Gs_QueryBuilder_Statement
      */
     public function setParams(array $params)
     {
         return $this->reset()->addParams($params);
     }
-
 
     /**
      * @param mixed $param
@@ -70,7 +70,7 @@ class Gs_QueryBuilder_Statement
     /**
      * Add a collection of params
      *
-     * @param array $params
+     * @param  array                     $params
      * @return Gs_QueryBuilder_Statement
      */
     public function addParams(array $params)
@@ -88,6 +88,7 @@ class Gs_QueryBuilder_Statement
     public function reset()
     {
         $this->_params = array();
+
         return $this;
     }
 

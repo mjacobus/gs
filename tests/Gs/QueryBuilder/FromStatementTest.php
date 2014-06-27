@@ -95,5 +95,4 @@ class Gs_QueryBuilder_FromStatementTest extends PHPUnit_Framework_TestCase
         );
     }
 
-
 }

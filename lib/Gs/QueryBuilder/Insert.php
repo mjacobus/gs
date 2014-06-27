@@ -20,12 +20,13 @@ class Gs_QueryBuilder_Insert extends Gs_QueryBuilder_Abstract
     /**
      * Set the table to insert data into
      *
-     * @param string $table
+     * @param  string                 $table
      * @return Gs_QueryBuilder_Insert
      */
     public function into($table)
     {
         $this->_table = $table;
+
         return $this;
     }
 
@@ -40,12 +41,13 @@ class Gs_QueryBuilder_Insert extends Gs_QueryBuilder_Abstract
     /**
      * Set the values to insert
      *
-     * @param array $params key is the field and value is the value \o/
+     * @param  array                  $params key is the field and value is the value \o/
      * @return Gs_QueryBuilder_Insert
      */
     public function values(array $values = array())
     {
-        $this->_values = $values; 
+        $this->_values = $values;
+
         return $this;
     }
 

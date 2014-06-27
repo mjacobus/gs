@@ -9,8 +9,8 @@ class Gs_QueryBuilder_JoinStatement extends Gs_QueryBuilder_Statement
     /**
      * Inner Joins a table
      *
-     * @param string $join the table to join
-     * @param string $on the condtition to join
+     * @param  string                        $join the table to join
+     * @param  string                        $on   the condtition to join
      * @return Gs_QueryBuilder_JoinStatement
      */
     public function innerJoin($join, $on = null)
@@ -21,8 +21,8 @@ class Gs_QueryBuilder_JoinStatement extends Gs_QueryBuilder_Statement
     /**
      * Left Joins a table
      *
-     * @param string $join the table to join
-     * @param string $on the condtition to join
+     * @param  string                        $join the table to join
+     * @param  string                        $on   the condtition to join
      * @return Gs_QueryBuilder_JoinStatement
      */
     public function leftJoin($join, $on = null)
@@ -46,9 +46,9 @@ class Gs_QueryBuilder_JoinStatement extends Gs_QueryBuilder_Statement
     /**
      * Joins a table
      *
-     * @param string $type the type of join (INNER, LEFT)
-     * @param string $join the table to join
-     * @param string $on the condtition to join
+     * @param  string                        $type the type of join (INNER, LEFT)
+     * @param  string                        $join the table to join
+     * @param  string                        $on   the condtition to join
      * @return Gs_QueryBuilder_JoinStatement
      */
     private function addJoin($type, $join, $on = null)
@@ -60,6 +60,7 @@ class Gs_QueryBuilder_JoinStatement extends Gs_QueryBuilder_Statement
         }
 
         $this->addParam($join);
+
         return $this;
     }
 

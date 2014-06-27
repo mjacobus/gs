@@ -162,7 +162,6 @@ class Gs_QueryBuilder_UpdateTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($sql, $this->_o->toSql($params));
     }
 
-
     /**
      * @test
      */

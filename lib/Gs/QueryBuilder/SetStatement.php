@@ -9,19 +9,20 @@ class Gs_QueryBuilder_SetStatement extends Gs_QueryBuilder_Statement
     /**
      * Set (override) the values to be set
      *
-     * @param array $values
+     * @param  array                        $values
      * @return Gs_QueryBuilder_SetStatement
      */
     public function set(array $params = array())
     {
         $this->setParams(array())->addSets($params);
+
         return $this;
     }
 
     /**
      * Add the values to be set
      *
-     * @param array $values
+     * @param  array                        $values
      * @return Gs_QueryBuilder_SetStatement
      */
     public function addSets(array $values = array())
@@ -36,13 +37,14 @@ class Gs_QueryBuilder_SetStatement extends Gs_QueryBuilder_Statement
     /**
      * Add the values to be set
      *
-     * @param string $column
-     * @param string $value
+     * @param  string                       $column
+     * @param  string                       $value
      * @return Gs_QueryBuilder_SetStatement
      */
     public function addSet($column, $value)
     {
         $this->_params[$column] = $value;
+
         return $this;
     }
 

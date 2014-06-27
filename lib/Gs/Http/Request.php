@@ -25,8 +25,8 @@ class Gs_Http_Request
      * Represents the request
      *
      * @param array $server the $_SERVER variable
-     * @param array $post the $_POST variable
-     * @param array $get teh $_GET variable
+     * @param array $post   the $_POST variable
+     * @param array $get    teh $_GET variable
      */
     public function __construct(array $server = array(), $post = array(),
         array $get = array())
@@ -40,8 +40,8 @@ class Gs_Http_Request
      * Get the server var or vars
      * If no key is given all the array is returned
      *
-     * @param string $key the key to the server var
-     * @param mixed $default the value to return if key is no set
+     * @param  string $key     the key to the server var
+     * @param  mixed  $default the value to return if key is no set
      * @return mixed
      */
     public function getServer($key = null, $default = null)
@@ -53,8 +53,8 @@ class Gs_Http_Request
      * Get the post var or vars
      * If no key is given all the array is returned
      *
-     * @param string $key the key to the post var
-     * @param mixed $default the value to return if key is no set
+     * @param  string $key     the key to the post var
+     * @param  mixed  $default the value to return if key is no set
      * @return mixed
      */
     public function getPost($key = null, $default = null)
@@ -66,8 +66,8 @@ class Gs_Http_Request
      * Get the get var or vars
      * If no key is given all the array is returned
      *
-     * @param string $key the key to the get var
-     * @param mixed $default the value to return if key is no set
+     * @param  string $key     the key to the get var
+     * @param  mixed  $default the value to return if key is no set
      * @return mixed
      */
     public function getGet($key = null, $default = null)
@@ -79,14 +79,14 @@ class Gs_Http_Request
      * Get either the post or the get param by the given key.
      * Return $default if none is found
      *
-     * @param string $key the key to the Post or Get param
-     * @param mixed $default the value to return if key is no set
+     * @param string $key     the key to the Post or Get param
+     * @param mixed  $default the value to return if key is no set
      */
     public function getParam($key, $default = null)
     {
         if ($this->_post->offsetExists($key)) {
             return $this->getPost($key);
-        } else if ($this->_get->offsetExists($key)) {
+        } elseif ($this->_get->offsetExists($key)) {
             return $this->getGet($key);
         }
 
@@ -104,7 +104,6 @@ class Gs_Http_Request
 
         return array_merge($get, $post);
     }
-
 
     /**
      * Check if request is POST

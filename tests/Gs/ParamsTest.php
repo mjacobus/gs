@@ -10,7 +10,6 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
      */
     protected $_o;
 
-
     public function setUp()
     {
         $this->_o = new Gs_Params(
@@ -106,4 +105,3 @@ class Gs_ParamsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('b' => 'Brazil'), $this->_o->getAll());
     }
 }
-

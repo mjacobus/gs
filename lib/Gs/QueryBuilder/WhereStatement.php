@@ -14,9 +14,9 @@ class Gs_QueryBuilder_WhereStatement extends Gs_QueryBuilder_Statement
      *     $this->addContition('a', '2', '!=')
      *
      *
-     * @param string $fieldOrCondition
-     * @param string $value
-     * @param string $operator
+     * @param  string                         $fieldOrCondition
+     * @param  string                         $value
+     * @param  string                         $operator
      * @return Gs_QueryBuilder_WhereStatement
      */
     public function addCondition($fieldOrCondition, $value = null,
@@ -44,7 +44,7 @@ class Gs_QueryBuilder_WhereStatement extends Gs_QueryBuilder_Statement
      *       array('x', '1', '!=')
      *   ));
      *
-     * @param array $conditions
+     * @param  array                          $conditions
      * @return Gs_QueryBuilder_WhereStatement
      */
     public function addConditions(array $conditions = array())
@@ -65,7 +65,6 @@ class Gs_QueryBuilder_WhereStatement extends Gs_QueryBuilder_Statement
         return $this;
     }
 
-
     /**
      * Return the resulting query
      * @return string
@@ -78,6 +77,5 @@ class Gs_QueryBuilder_WhereStatement extends Gs_QueryBuilder_Statement
             return 'WHERE ' . implode(' AND ', $this->getParams());
         }
     }
-
 
 }

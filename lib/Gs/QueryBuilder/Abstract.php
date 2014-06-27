@@ -11,13 +11,12 @@ class Gs_QueryBuilder_Abstract
      */
     protected $_helper;
 
-
     /**
      * Constructor
      *
      * @param array $options Hash of options
-     *              Allowed options:
-     *                  helper: Gs_QueryBuilder_Helper
+     *                       Allowed options:
+     *                       helper: Gs_QueryBuilder_Helper
      */
     public function __construct($options = array())
     {
@@ -43,12 +42,13 @@ class Gs_QueryBuilder_Abstract
     /**
      * Set the helper
      *
-     * @param Gs_QueryBuilder_Helper $helper
+     * @param  Gs_QueryBuilder_Helper $helper
      * @return Gs_QueryBuilder
      */
     public function setHelper(Gs_QueryBuilder_Helper $helper)
     {
         $this->_helper = $helper;
+
         return $this;
     }
 
@@ -65,7 +65,7 @@ class Gs_QueryBuilder_Abstract
     /**
      * Converts to the desired sql
      *
-     * @param array $params the placeholders to replace for
+     * @param  array  $params the placeholders to replace for
      * @return string
      */
     public function toSql(array $params = array())
