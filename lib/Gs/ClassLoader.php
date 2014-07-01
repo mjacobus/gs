@@ -13,7 +13,7 @@ class Gs_ClassLoader
     {
         $file = $this->fileName($class);
 
-        $paths = explode(PATH_SEPARATOR, get_include_path());
+        $paths = explode(':', get_include_path());
 
         foreach ($paths as $path) {
             if (file_exists($path . '/' . $file)) {
